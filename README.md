@@ -1,13 +1,6 @@
-# humidify_flutter
+# Hungry Plants
 
-A new Flutter project.
-
-## Getting Started
-
-For help getting started with Flutter, view our online
-[documentation](https://flutter.io/).
-
-
+Hungry plants is an application that connect and visualizes your humidity data!
 
 ## App strucutre
 
