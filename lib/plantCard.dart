@@ -13,7 +13,7 @@ Card plantCard(title, int humidityLevel, breed) {
     margin: EdgeInsets.only(top: 20.0),
     child: new Container(
       padding: EdgeInsets.all(25.0),
-      height: 130.0,
+      height: 140.0,
       decoration: new BoxDecoration(
         color: getDynamicColor(humidityLevel),
       ),
