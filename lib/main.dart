@@ -9,7 +9,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return new MaterialApp(
-      title: 'Humidifyssss',
+      title: 'Humidify',
       theme: new ThemeData(
         // This is the theme of your application.
         //
@@ -75,7 +75,7 @@ class _MyHomePageState extends State<MyHomePage> {
               fontFamily: "Helvetica",
             ),
           ),
-          plantCard("Magnolia - Outdoors", 20, "magnilia"),
+          plantCard("Magnolia - Outdoors 2", 20, "magnilia"),
           plantCard("Orchid - Bedroom", 80, "orchidia"),
           plantCard("Kaktus - Living room", 10, "kaktus"),
           plantCard("Magnolia - Outdoors", 40, "magnilia"),
