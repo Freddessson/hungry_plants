@@ -35,7 +35,8 @@ class _Home extends State<Home> {
       children: plants.map((plant) =>
         new PlantCard(
           plant: plant
-        ).build(context)).toList(),
+        ).build(context)
+      ).toList(),
     );
 
     return new Scaffold(
