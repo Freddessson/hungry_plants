@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 // import './card.dart';
 import './pages/home.dart';
-import './pages/singlePlant.dart';
 
 void main() => runApp(new MyApp());
 

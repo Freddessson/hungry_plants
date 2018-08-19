@@ -21,7 +21,11 @@ class PlantCard extends StatelessWidget {
     return new GestureDetector(
         onTap: () => Navigator.push(
           context,
-          MaterialPageRoute(builder: (context) => SinglePlant()),
+          MaterialPageRoute(builder: (context) => SinglePlant(
+            title: title,
+            humidityLevel: humidityLevel,
+            breed: breed,
+          )),
         ),
         child: new Card(
           margin: EdgeInsets.only(top: 20.0),

@@ -1,33 +1,35 @@
 import 'package:flutter/material.dart';
-// import './card.dart';
+
+import '../components/charts/line-area.dart';
 
 
-class SinglePlant extends StatefulWidget {
-  SinglePlant({Key key, this.title}) : super(key: key);
+
+
+class SinglePlant extends StatelessWidget {
+  SinglePlant({ this.title, this.humidityLevel, this.breed});
 
   final String title;
+  final int humidityLevel;
+  final String breed;
 
-  @override
-  _SinglePlant createState() => new _SinglePlant();
-}
-
-class _SinglePlant extends State<SinglePlant> {
   @override
   Widget build(BuildContext context) {
-    // This method is rerun every time setState is called, for instance as done
-    // by the _incrementCounter method above.
-    //
-    // The Flutter framework has been optimized to make rerunning build methods
-    // fast, so that you can just rebuild anything that needs updating rather
-    // than having to individually change instances of widgets.
+
+    var chart = new AreaAndLineChart.withSampleData();
+
+    var chartWidget = new Padding(
+      padding: new EdgeInsets.all(32.0),
+      child: new SizedBox(
+        height: 200.0,
+        child: chart,
+      ),
+    );
+
     return new Scaffold(
       appBar: new AppBar(
-        // Here we take the value from the MySinglePlantPage object that was created by
-        // the App.build method, and use it to set our appbar title.
-        title: new Text("Plant"),
+        title: new Text(title),
       ),
       body: new ListView(
-        //crossAxisAlignment: CrossAxisAlignment.stretch,
         padding: const EdgeInsets.all(20.0),
         children: [
           new Text(
@@ -43,7 +45,8 @@ class _SinglePlant extends State<SinglePlant> {
           new RaisedButton(
             child: new Text("Go back"),
             onPressed: () => Navigator.pop(context),
-          )
+          ),
+          chartWidget
         ],
       ),
     );
