@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 // import './card.dart';
 import './plantCard.dart';
+import 'charts/line-area.dart';
 
 void main() => runApp(new MyApp());
 
@@ -85,6 +86,7 @@ class _MyHomePageState extends State<MyHomePage> {
           plantCard("Orchid - Bedroom", 70, "orchidia"),
           plantCard("Orchid - Bedroom", 90, "orchidia"),
           plantCard("Orchid - Bedroom", 100, "orchidia"),
+          // AreaAndLineChart.withSampleData(),
         ],
       ),
     );
