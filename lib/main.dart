@@ -20,6 +20,7 @@ class MyApp extends StatelessWidget {
         // or press Run > Flutter Hot Reload in IntelliJ). Notice that the
         // counter didn't reset back to zero; the application is not restarted.
         primaryColor: Color(0xFFA9CF54),
+        fontFamily: "Roboto",
         //accentColor: Colors.white
         //primarySwatch: MaterialColor(0, new Map(0, Color(0xFFA9CF54))) //, Color.white))
       ),

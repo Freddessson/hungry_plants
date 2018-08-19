@@ -2,6 +2,13 @@
 
 Hungry plants is an application that connect and visualizes your humidity data!
 
+## Local development
+
+1. Go to https://github.com/mansdahlstrom1/hungry-plants and clone the API
+2. cd in the folder of the API repo `cd path/to/api/folder`
+3. run `npm run dev`
+4. Change the `API_URL` to `localhost:3000` in `api.dart` if not set.   
+
 ## App strucutre
 
 ### Home

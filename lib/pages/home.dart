@@ -32,11 +32,10 @@ class _Home extends State<Home> {
 
     var list = (List<Plant> plants) => new ListView(
       padding: const EdgeInsets.all(20.0),
-      children: plants.map((plant) => new PlantCard(
-        title: plant.name,
-        humidityLevel: (plant.latest_measurement.humidity * 100).toInt() ,
-        breed: plant.breed,
-      ).build(context)).toList(),
+      children: plants.map((plant) =>
+        new PlantCard(
+          plant: plant
+        ).build(context)).toList(),
     );
 
     return new Scaffold(
