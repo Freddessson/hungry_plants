@@ -2,6 +2,9 @@ import 'package:flutter/material.dart';
 // import './card.dart';
 import '../components/plantCard.dart';
 import '../components/charts/line-area.dart';
+import '../components/api.dart';
+import '../models/plant.dart';
+
 
 class Home extends StatefulWidget {
   Home({Key key, this.title}) : super(key: key);
@@ -26,47 +29,36 @@ class _Home extends State<Home> {
   Widget build(BuildContext context) {
     // This method is rerun every time setState is called, for instance as done
     // by the _incrementCounter method above.
-    //
-    // The Flutter framework has been optimized to make rerunning build methods
-    // fast, so that you can just rebuild anything that needs updating rather
-    // than having to individually change instances of widgets.
+
+    var list = (List<Plant> plants) => new ListView(
+      padding: const EdgeInsets.all(20.0),
+      children: plants.map((plant) => new PlantCard(
+        title: plant.name,
+        humidityLevel: (plant.latest_measurement.humidity * 100).toInt() ,
+        breed: plant.breed,
+      ).build(context)).toList(),
+    );
+
     return new Scaffold(
       appBar: new AppBar(
-        // Here we take the value from the MyHomePage object that was created by
-        // the App.build method, and use it to set our appbar title.
         title: new Text(widget.title),
       ),
-      body: new ListView(
-        //crossAxisAlignment: CrossAxisAlignment.stretch,
-        padding: const EdgeInsets.all(20.0),
-        children: [
-          new Text(
-            "My Plants",
-            textAlign: TextAlign.left,
-            style: new TextStyle(
-              color: Colors.grey,
-              fontSize: 26.0,
-              fontWeight: FontWeight.bold,
-              fontFamily: "Helvetica",
-            ),
-          ),
-          new PlantCard(
-            title: "Magnolia - Outdoors 2",
-            humidityLevel: 20,
-            breed: "magnilia",
-          ),
-          // plantCard("Orchid - Bedroom", 80, "orchidia"),
-          // plantCard("Kaktus - Living room", 10, "kaktus"),
-          // plantCard("Magnolia - Outdoors", 40, "magnilia"),
-          // plantCard("Magnolia - Outdoors", 60, "magnilia"),
-          // plantCard("Magnolia - Outdoors", 50, "magnilia"),
-          // plantCard("Magnolia - Outdoors", 30, "magnilia"),
-          // plantCard("Orchid - Bedroom", 70, "orchidia"),
-          // plantCard("Orchid - Bedroom", 90, "orchidia"),
-          // plantCard("Orchid - Bedroom", 100, "orchidia"),
-          // AreaAndLineChart.withSampleData(),
-        ],
-      ),
+      body: Center(
+        child: FutureBuilder<List<Plant>>(
+          future: new API().getAllPlants(),
+          builder: (context, snapshot) {
+            if (snapshot.hasData) {
+              List<Plant> plants = snapshot.data;
+              return list(plants);
+            } else if (snapshot.hasError) {
+              return Text("${snapshot.error}");
+            }
+
+            // By default, show a loading spinner
+            return CircularProgressIndicator();
+          },
+        ),
+      )
     );
   }
 }
