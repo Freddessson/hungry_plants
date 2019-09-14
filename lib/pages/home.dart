@@ -55,7 +55,7 @@ class _Home extends State<Home> {
             humidityLevel: 20,
             breed: "magnilia",
           ),
-          // plantCard("Orchid - Bedroom", 80, "orchidia"),
+          new PlantCard(title: "Orchid - Bedroom", humidityLevel: 80, breed: "orchidia"),
           // plantCard("Kaktus - Living room", 10, "kaktus"),
           // plantCard("Magnolia - Outdoors", 40, "magnilia"),
           // plantCard("Magnolia - Outdoors", 60, "magnilia"),
