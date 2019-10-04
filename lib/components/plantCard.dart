@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 import './styles/text/default.dart';
 import './styles/text/subtitle.dart';
@@ -39,10 +40,11 @@ class PlantCard extends StatelessWidget {
                     children: [
                       textTitle(title, TextAlign.left),
                       textSubTitle(breed, TextAlign.left),
-                      defaultText(subtitle, TextAlign.left)
+                      defaultText(subtitle, TextAlign.left),
                     ]
                   )
                 ),
+                new Icon(FontAwesomeIcons.leaf, size: 53.3), 
                 new Image.asset("assets/images/potted-plant.png")
               ]
             ),
