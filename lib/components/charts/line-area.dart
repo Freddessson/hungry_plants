@@ -21,14 +21,14 @@ class AreaAndLineChart extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return new charts.LineChart(seriesList,
-        animate: animate,
-        customSeriesRenderers: [
-          new charts.LineRendererConfig(
-              // ID used to link series to this renderer.
-              customRendererId: 'customArea',
-              includeArea: true,
-              stacked: true),
-        ]);
+      animate: animate,
+      customSeriesRenderers: [
+        new charts.LineRendererConfig(
+          // ID used to link series to this renderer.
+          customRendererId: 'customArea',
+          includeArea: true,
+          stacked: true),
+      ]);
   }
 
   /// Create one series with sample hard coded data.

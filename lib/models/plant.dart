@@ -4,6 +4,11 @@ import 'package:flutter/material.dart';
 import './measurement.dart';
 
 class Plant {
+  final String id;
+  final String name;
+  final String breed;
+  final Measurement latest_measurement;
+
   const Plant({
     @required this.id,
     @required this.name,
@@ -14,11 +19,6 @@ class Plant {
         assert(name != null),
         assert(breed != null),
         assert(latest_measurement != null);
-
-  final String id;
-  final String name;
-  final String breed;
-  final Measurement latest_measurement;
 
   String humidityAsString() {
     return (this.latest_measurement.humidity * 100).toString();

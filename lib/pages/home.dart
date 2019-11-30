@@ -27,9 +27,7 @@ class Home extends StatefulWidget {
 class _Home extends State<Home> {
   @override
   Widget build(BuildContext context) {
-    // This method is rerun every time setState is called, for instance as done
-    // by the _incrementCounter method above.
-
+    // This method is rerun every time setState is called
     var list = (List<Plant> plants) => new ListView(
       padding: const EdgeInsets.all(20.0),
       children: plants.map((plant) =>
@@ -40,12 +38,10 @@ class _Home extends State<Home> {
     );
 
     return new Scaffold(
-      appBar: new AppBar(
-        title: new Text(widget.title),
-      ),
+
       body: Center(
         child: FutureBuilder<List<Plant>>(
-          future: new API().getAllPlants(),
+          future: new API().getAllPlants()  ,
           builder: (context, snapshot) {
             if (snapshot.hasData) {
               List<Plant> plants = snapshot.data;
