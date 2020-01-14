@@ -20,10 +20,10 @@ class Measurement {
   final double humidity;
   final DateTime timestamp;
 
-  // String get assetPackage => 'shrine_images';
+  int toInt() {
+    return (this.humidity * 100).round();
+  }
 
-  // @override
-  // String toString() => "$name (id=$id)";
   factory Measurement.fromJson(Map<String, dynamic> json) {
     return Measurement(
       id: json['id'],
